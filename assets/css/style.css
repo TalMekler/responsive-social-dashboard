@@ -106,7 +106,8 @@ body header .theme-switcher .switcher-wrapper .switcher-toggle {
 }
 
 body header .theme-switcher .switcher-wrapper .switcher-toggle.light-theme {
-    right: 4px;
+    left: calc(100% - 4px);
+    transform: translateX(-100%);
 }
 
 body header .theme-switcher .switcher-wrapper .switcher-toggle.dark-theme {
