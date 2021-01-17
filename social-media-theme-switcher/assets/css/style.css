@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+:root {
+    /* ## COLORS ## */
+    --color-limeGreen: hsl(163, 72%, 41%);
+    --color-brightRed: hsl(356, 69%, 56%);
+    --color-facebook: hsl(208, 92%, 53%);
+    --color-twitter: hsl(203, 89%, 53%);
+    --color-instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --color-youTube: hsl(348, 97%, 39%);
+    /* ## TOGGLE ## */
+    --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --switcher: hsl(230, 17%, 14%);
+    /* Dark Theme */
+    --toggle-theme: hsl(230, 22%, 74%);
+    --bg-color: hsl(230, 17%, 14%);
+    --topBg-color: hsl(232, 19%, 15%);
+    --cardBg-color: hsl(228, 28%, 20%);
+    --text-color: hsl(228, 34%, 66%);
+    --text2-color: hsl(0, 0%, 100%);
+    /* Font Size */
+    --size-normal: .875;
+    /* Font family */
+    --family-first: 'Inter', sans-serif;
+    /* font weight */
+    --weight-normal: 400;
+    --weight-bold: 700;
+    /* lighness */
+    --brightness: brightness(1.4);
+    ;
+}
+
+body.light-theme {
+    --toggle-theme: hsl(230, 22%, 74%);
+    --bg-color: hsl(0, 0%, 100%);
+    --topBg-color: hsl(225, 100%, 98%);
+    --cardBg-color: hsl(227, 47%, 96%);
+    --text-color: hsl(228, 12%, 44%);
+    --text2-color: hsl(230, 17%, 14%);
+    --switcher: #fff;
+    --brightness: brightness(.8)
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+    background: transparent;
+}
+
+body {
+    font-size: var(--size-normal);
+    font-weight: var(--weight-normal);
+    font-family: var(--family-first);
+    background: var(--bg-color);
+}
+
+body header {
+    padding: 2.625rem 10rem 10rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--topBg-color);
+}
+
+body header .text h1 {
+    color: var(--text2-color);
+}
+
+body header .text p {
+    color: var(--text-color);
+}
+
+body header .theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body header .theme-switcher p {
+    color: var(--text2-color);
+    font-weight: var(--weight-bold);
+}
+
+body header .theme-switcher .switcher-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--toggle);
+    width: 49px;
+    height: 25px;
+    border-radius: 30px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+body header .theme-switcher .switcher-wrapper .switcher-toggle {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--switcher);
+    border-radius: 50%;
+}
+
+body header .theme-switcher .switcher-wrapper .switcher-toggle.light-theme {
+    right: 4px;
+}
+
+body header .theme-switcher .switcher-wrapper .switcher-toggle.dark-theme {
+    left: 4px;
+}
+
+.social-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10rem;
+    transform: translateY(-50%);
+}
+
+.social-container .social__item {
+    background: var(--cardBg-color);
+    border-radius: 10px;
+    padding: 0 4rem;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.social-container .social__item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.social-container .social__item:hover {
+    filter: var(--brightness);
+}
+
+.social-container .social__item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 0%;
+    left: 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.social-container .social__item.facebook::before {
+    background: var(--color-facebook);
+}
+
+.social-container .social__item.twitter::before {
+    background: var(--color-twitter);
+}
+
+.social-container .social__item.instagram::before {
+    background: var(--color-instagram);
+}
+
+.social-container .social__item.youtube::before {
+    background: var(--color-youTube);
+}
+
+.social-container .social__item .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.75rem 0;
+}
+
+.social-container .social__item .profile svg {
+    margin-right: .7rem;
+}
+
+.social-container .social__item .profile .name {
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.social-container .social__item .followers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-container .social__item .followers .number {
+    color: var(--text2-color);
+    font-size: 2.625rem;
+    font-weight: var(--weight-bold);
+}
+
+.social-container .social__item .followers .type {
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.social-container .social__item .status-today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.social-container .social__item .status-today svg {
+    margin-right: 4px;
+}
+
+.social-container .social__item .status-today .text.up {
+    color: var(--color-limeGreen);
+}
+
+.social-container .social__item .status-today .text.down {
+    color: var(--color-brightRed);
+}
+
+.overview-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10rem;
+    margin-bottom: 4.5rem;
+}
+
+.overview-container h2 {
+    font-size: 1.4rem;
+    color: var(--text2-color);
+    margin-bottom: 2rem;
+}
+
+.overview-container .overview-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.overview-container .overview-wrapper .overview-item {
+    background: var(--cardBg-color);
+    border-radius: 5px;
+    padding: 0 1.5rem;
+    width: 260px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.overview-container .overview-wrapper .overview-item:hover {
+    filter: var(--brightness);
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item.start {
+    justify-content: flex-start;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item.end {
+    justify-content: flex-end;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .type {
+    color: var(--text-color);
+    font-weight: var(--weight-bold);
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .number {
+    color: var(--text2-color);
+    font-weight: var(--weight-bold);
+    font-size: 1.5rem;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .per__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .per__status svg {
+    margin-right: 2px;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .per__status .number {
+    font-size: 12px;
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .per__status.up .number {
+    color: var(--color-limeGreen);
+}
+
+.overview-container .overview-wrapper .overview-item .grid__item .per__status.down .number {
+    color: var(--color-brightRed);
+}
+
+@media screen and (max-width: 375px){
+    body header {
+        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+        flex-direction: column;
+        
+    }
+    body header .text {
+        border-bottom: 1px solid var(--text-color);
+        padding-bottom: 1.625rem;
+        margin-bottom: 1.625rem;
+        width: 100%;
+    }
+    body header .text h1 {
+        font-size: 1.1rem;
+    }
+    body header .theme-switcher {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    body header .theme-switcher .switcher-wrapper {
+        margin: 0;
+    }
+    .social-container {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        transform: translateY(0);
+        margin-bottom: 3.375rem;
+    }
+    .social-container .social__item{
+        width: 325px;
+    }
+    .social-container .social__item:not(:last-child) {
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+    }
+    .overview-container {
+        padding: 0 1.5rem;
+    }
+    .overview-container .overview-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .overview-container .overview-wrapper .overview-item {
+        width: 325px;
+    }
+}
