@@ -103,6 +103,7 @@ body header .theme-switcher .switcher-wrapper .switcher-toggle {
     height: 18px;
     background: var(--switcher);
     border-radius: 50%;
+    transition: all .3s ease;
 }
 
 body header .theme-switcher .switcher-wrapper .switcher-toggle.light-theme {
