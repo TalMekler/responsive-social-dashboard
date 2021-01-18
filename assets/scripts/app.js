@@ -30,7 +30,7 @@ function setThemeAtTheStart() {
         toggle_circle.classList.add("dark-theme");
         toggle_circle.classList.remove("light-theme");
     }
-    if (localStorage.getItem("theme") == 'light-theme'){
+    if (localStorage.getItem("theme") == 'light-theme') {
         document.querySelector("body").classList.add("light-theme");
         toggle_circle.classList.remove("dark-theme");
         toggle_circle.classList.add("light-theme");
